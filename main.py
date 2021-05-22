@@ -26,5 +26,6 @@ async def clear(ctx, amount = 2):
 async def kick(ctx, member : discord.Member, *, reason = "No reason provided"):
     await member.send("You have been kicked from my server because: " + reason)
     await member.kick(reason=reason)
+    await ctx.send(member + " has been kicked")
 
 client.run(token)
