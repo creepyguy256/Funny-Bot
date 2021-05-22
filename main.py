@@ -12,7 +12,7 @@ rules = f.readlines()
 async def on_ready():
     print("Bot is ready!")
 
-@client.command()
+@client.command(aliases = ["rules"])
 async def rule(ctx, *, number):
     await ctx.send(rules[int(number) - 1])
 
