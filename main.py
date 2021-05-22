@@ -33,4 +33,20 @@ async def ban(ctx, member : discord.Member, *, reason = "No reason provided"):
     await member.ban(reason=reason)
     await ctx.send(member.display_name + " has been banned because " + reason)
 
+@client.command(aliases = ["ub"])
+@commands.has_permissions(ban_members = True)
+async def unban(ctx, *, member):
+    banned_users = await ctx.guild.bans()
+    member_name, member_disc = member.split("#")
+
+    for banned_entry in banned_users:
+        user = banned_entry.user
+
+        if(user.name, user.discriminator)==(member_name, member_disc):
+            await ctx.guild.unban(user)
+            await ctx.send(member_name + " has been unbanned!")
+            return
+
+    await ctx.send(member + "was not found")
+
 client.run(token)
