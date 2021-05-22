@@ -25,7 +25,7 @@ async def clear(ctx, amount = 2):
 @commands.has_permissions(kick_members = True)
 async def kick(ctx, member : discord.Member, *, reason = "No reason provided"):
     await member.kick(reason=reason)
-    await ctx.send(member + " has been kicked")
+    await ctx.send(member.display_name + " has been kicked")
 
 @client.command(aliases = ["b"])
 @commands.has_permissions(ban_members = True)
