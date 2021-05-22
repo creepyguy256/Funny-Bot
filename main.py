@@ -14,6 +14,7 @@ async def on_ready():
 async def rule(ctx):
     await ctx.send("Rule lol")
 
+@client.command
 async def hello(ctx):
     await ctx.send("Hello!")
 
