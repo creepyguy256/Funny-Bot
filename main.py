@@ -16,4 +16,8 @@ async def on_ready():
 async def rule(ctx, *, number):
     await ctx.send(rules[int(number) - 1])
 
+@client.command(aliases = ["c"])
+async def clear(ctx, amount = 2):
+    await ctx.channel.purge(limit = amount)
+
 client.run(token)
