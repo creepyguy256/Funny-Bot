@@ -56,7 +56,7 @@ async def mute(ctx, member : discord.Member):
 
     await member.add_roles(muted_role)
 
-    await ctx.send(member.metion + " was muted")
+    await ctx.send(member.mention + " was muted")
 
 @client.command(aliases = ["um"])
 @commands.has_permissions(kick_members = True)
@@ -65,6 +65,6 @@ async def unmute(ctx, member : discord.Member):
 
     await member.remove_roles(muted_role)
 
-    await ctx.send(member.metion + " was muted")
+    await ctx.send(member.mention + " was unmuted")
 
 client.run(token)
