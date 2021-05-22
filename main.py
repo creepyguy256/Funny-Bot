@@ -49,4 +49,22 @@ async def unban(ctx, *, member):
 
     await ctx.send(member + " was not found")
 
+@client.command(aliases = ["m"])
+@commands.has_permissions(kick_members = True)
+async def mute(ctx, member : discord.Member):
+    muted_role = ctx.guild.get_role(845752437787852841)
+
+    await member.add_roles(muted_role)
+
+    await ctx.send(member.metion + " was muted")
+
+@client.command(aliases = ["um"])
+@commands.has_permissions(kick_members = True)
+async def mute(ctx, member : discord.Member):
+    muted_role = ctx.guild.get_role(845752437787852841)
+
+    await member.remove_roles(muted_role)
+
+    await ctx.send(member.metion + " was muted")
+
 client.run(token)
