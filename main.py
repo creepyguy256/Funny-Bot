@@ -28,10 +28,9 @@ async def kick(ctx, member : discord.Member, *, reason = "No reason provided"):
     await ctx.send(member + " has been kicked")
 
 @client.command(aliases = ["b"])
-@commands.has_permissions(kick_members = True)
+@commands.has_permissions(ban_members = True)
 async def ban(ctx, member : discord.Member, *, reason = "No reason provided"):
     await member.ban(reason=reason)
     await ctx.send(member.display_name + " has been kicked")
 
-client.run(token)
 client.run(token)
