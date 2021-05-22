@@ -18,6 +18,6 @@ async def rule(ctx, *, number):
 
 @client.command(aliases = ["c"])
 async def clear(ctx, amount = 2):
-    await ctx.channel.purge(limit = amount)
+    await ctx.channel.purge(limit = amount + 1)
 
 client.run(token)
