@@ -17,6 +17,7 @@ async def rule(ctx, *, number):
     await ctx.send(rules[int(number) - 1])
 
 @client.command(aliases = ["c"])
+@commands.has_permissions(manage_messages = True)
 async def clear(ctx, amount = 2):
     await ctx.channel.purge(limit = amount + 1)
 
