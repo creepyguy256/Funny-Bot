@@ -1,0 +1,8 @@
+Note: You do not need to put in brackets when you type commands
+!rule (Number): Sends the rule that corresponds to the number you put in the brackets
+!clear (Number): Clears the number of messages you put in the brackets (Administrators only)
+!kick (User) (Reason): Kicks the user you specified for the reason you specified (Administrators only)
+!ban (User) (Reason): Bans the user you specified for the reason you specified (Administrators only)
+!unban (User): Unbans the user specified (Administrators only)
+!mute (User): Mutes the user specified (Administrators only)
+!unmute (User): Unmutes the user specified (Administrators only)
