@@ -7,6 +7,10 @@ client = commands.Bot(command_prefix="!")
 token = environ["Token"]
 f = open("rules.txt", "r")
 rules = f.readlines()
+f = open("filtered-words.txt", "r")
+filtered_words = f.readlines()
+f = open("help.txt", "r")
+help_command = f.read()
 
 @client.event
 async def on_ready():
@@ -66,5 +70,11 @@ async def unmute(ctx, member : discord.Member):
     await member.remove_roles(muted_role)
 
     await ctx.send(member.mention + " was unmuted")
+
+@client.command(alsiases = ["h"])
+async def help(ctx):
+    await ctx.send(help_command)
+
+
 
 client.run(token)
